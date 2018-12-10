@@ -1,16 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { AppComponent } from './app.component';
+import { WidgetsLoaderModule } from './widgets-loader/module';
+import { WIDGETS } from './widgets';
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
   imports: [
-    BrowserModule
+    BrowserModule,
+
+    WidgetsLoaderModule.forRoot(WIDGETS),
   ],
-  providers: [],
-  bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+  ngDoBootstrap() {
+  }
+}
