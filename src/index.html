@@ -9,6 +9,56 @@
   <link rel="icon" type="image/x-icon" href="favicon.ico">
 </head>
 <body>
-  <app-root></app-root>
+  <button class="toggle"
+          data-widget-selector="hello-widget">
+    hello
+  </button>
+  <button class="toggle"
+          data-widget-selector="hi-widget">
+    hi
+  </button>
+  <button class="toggle"
+          data-widget-selector="bye-widget">
+    bye
+  </button>
+
+  <div class="widgets"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const widgetsContainer = document.querySelector('.widgets');
+
+      document.querySelectorAll('.toggle').forEach(button => {
+        const widgetSelector = button.dataset.widgetSelector;
+
+        let widget = null;
+
+        button.addEventListener('click', () => {
+          if (widget) {
+            widgetsContainer.removeChild(widget);
+
+            widget = null;
+          }
+          else {
+            widget = document.createElement(widgetSelector);
+
+            widgetsContainer.appendChild(widget);
+          }
+        });
+      });
+    });
+  </script>
+
+  <style>
+    .toggle {
+      margin: 0 10px;
+    }
+
+    .widgets {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px dashed grey;
+    }
+  </style>
 </body>
 </html>
