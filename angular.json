@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-elements-lazy-loading": {
+    "lazy-loaded-custom-elements": {
       "root": "",
       "sourceRoot": "src",
       "projectType": "application",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-elements-lazy-loading",
+            "outputPath": "dist/lazy-loaded-custom-elements",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -65,18 +65,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-elements-lazy-loading:build"
+            "browserTarget": "lazy-loaded-custom-elements:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-elements-lazy-loading:build:production"
+              "browserTarget": "lazy-loaded-custom-elements:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-elements-lazy-loading:build"
+            "browserTarget": "lazy-loaded-custom-elements:build"
           }
         },
         "test": {
@@ -111,5 +111,5 @@
       }
     }
   },
-  "defaultProject": "ng-elements-lazy-loading"
+  "defaultProject": "lazy-loaded-custom-elements"
 }
