@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MeowwWidgetComponent } from './component/meoww/meoww';
 import { CUSTOM_ELEMENTS_COMPONENTS_TOKEN } from '../custom-elements-loader/const';
-import { ILazyLoadedCustomElementComponent } from '../custom-elements-loader/interface';
+import { ICustomElementComponent } from '../custom-elements-loader/interface';
 import { MEOWW_WIDGET_SELECTOR, PURR_WIDGET_SELECTOR } from './const';
 import { PurrWidgetComponent } from './component/purr/purr';
 
-const WIDGETS_COMPONENTS: ILazyLoadedCustomElementComponent[] = [
+const WIDGETS_COMPONENTS: ICustomElementComponent[] = [
   { selector: MEOWW_WIDGET_SELECTOR, component: MeowwWidgetComponent },
   { selector: PURR_WIDGET_SELECTOR, component: PurrWidgetComponent, }
 ];

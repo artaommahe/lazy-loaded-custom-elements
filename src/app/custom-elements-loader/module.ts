@@ -1,5 +1,5 @@
 import { NgModule, Injector, ModuleWithProviders, Inject, NgModuleFactoryLoader, SystemJsNgModuleLoader, NgModuleRef } from '@angular/core';
-import { ILazyLoadedCustomElements } from './interface';
+import { ICustomElements } from './interface';
 import { CUSTOM_ELEMENTS_TOKEN, CUSTOM_ELEMENTS_COMPONENTS_TOKEN } from './const';
 import sentinel from 'sentinel-js';
 import { ElementZoneStrategyFactory } from 'elements-zone-strategy';
@@ -11,7 +11,7 @@ import { createCustomElement } from '@angular/elements';
   ],
 })
 export class CustomElementsLoaderModule {
-  public static forRoot(customElements: ILazyLoadedCustomElements[]): ModuleWithProviders {
+  public static forRoot(customElements: ICustomElements[]): ModuleWithProviders {
     return {
       ngModule: CustomElementsLoaderModule,
       providers: [
@@ -22,7 +22,7 @@ export class CustomElementsLoaderModule {
 
   constructor(
     private injector: Injector,
-    @Inject(CUSTOM_ELEMENTS_TOKEN) private customElements: ILazyLoadedCustomElements[],
+    @Inject(CUSTOM_ELEMENTS_TOKEN) private customElements: ICustomElements[],
     private ngModuleFactoryLoader: NgModuleFactoryLoader,
   ) {
     this.customElements.forEach(({ selectors, modulePath }) =>
