@@ -1,14 +1,14 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { WidgetsLoaderModule } from './widgets-loader/module';
-import { WIDGETS } from './widgets';
+import { CustomElementsLoaderModule } from './custom-elements-loader/module';
+import { CUSTOM_ELEMENTS } from './widgets';
 
 @NgModule({
   imports: [
     BrowserModule,
 
-    WidgetsLoaderModule.forRoot(WIDGETS),
+    CustomElementsLoaderModule.forRoot(CUSTOM_ELEMENTS),
   ],
 })
 export class AppModule {

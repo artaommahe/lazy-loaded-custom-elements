@@ -1,10 +1,11 @@
 import { Type } from '@angular/core';
 
-export interface ILazyLoadingWidgets {
+export interface ILazyLoadedCustomElements {
   modulePath: string;
   selectors: string[];
 }
-export interface ILazyLoadingWidgetComponent {
+
+export interface ILazyLoadedCustomElementComponent {
   selector: string;
   component: Type<any>;
 }

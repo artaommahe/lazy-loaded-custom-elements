@@ -1,11 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { WIDGETS_COMPONENTS_TOKEN } from '../widgets-loader/const';
-import { ILazyLoadingWidgetComponent } from '../widgets-loader/interface';
+import { CUSTOM_ELEMENTS_COMPONENTS_TOKEN } from '../custom-elements-loader/const';
+import { ILazyLoadedCustomElementComponent } from '../custom-elements-loader/interface';
 import { WOOF_WIDGET_SELECTOR } from './const';
 import { WoofWidgetComponent } from './component/woof/woof';
 
-const WIDGETS_COMPONENTS: ILazyLoadingWidgetComponent[] = [
+const WIDGETS_COMPONENTS: ILazyLoadedCustomElementComponent[] = [
   { selector: WOOF_WIDGET_SELECTOR, component: WoofWidgetComponent }
 ];
 
@@ -14,7 +14,7 @@ const WIDGETS_COMPONENTS: ILazyLoadingWidgetComponent[] = [
     CommonModule,
   ],
   providers: [
-    { provide: WIDGETS_COMPONENTS_TOKEN, useValue: WIDGETS_COMPONENTS },
+    { provide: CUSTOM_ELEMENTS_COMPONENTS_TOKEN, useValue: WIDGETS_COMPONENTS },
   ],
   declarations: [
     WoofWidgetComponent,
