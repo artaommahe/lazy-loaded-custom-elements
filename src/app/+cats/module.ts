@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HelloComponent } from './component/hello/hello';
+import { MeowwWidgetComponent } from './component/meoww/meoww';
 import { WIDGETS_COMPONENTS_TOKEN } from '../widgets-loader/const';
 import { ILazyLoadingWidgetComponent } from '../widgets-loader/interface';
-import { HELLO_WIDGET_SELECTOR, HI_WIDGET_SELECTOR } from './const';
-import { HiComponent } from './component/hi/hi';
+import { MEOWW_WIDGET_SELECTOR, PURR_WIDGET_SELECTOR } from './const';
+import { PurrWidgetComponent } from './component/purr/purr';
 
 const WIDGETS_COMPONENTS: ILazyLoadingWidgetComponent[] = [
-  { selector: HELLO_WIDGET_SELECTOR, component: HelloComponent },
-  { selector: HI_WIDGET_SELECTOR, component: HiComponent, }
+  { selector: MEOWW_WIDGET_SELECTOR, component: MeowwWidgetComponent },
+  { selector: PURR_WIDGET_SELECTOR, component: PurrWidgetComponent, }
 ];
 
 @NgModule({
@@ -19,17 +19,17 @@ const WIDGETS_COMPONENTS: ILazyLoadingWidgetComponent[] = [
     { provide: WIDGETS_COMPONENTS_TOKEN, useValue: WIDGETS_COMPONENTS },
   ],
   declarations: [
-    HelloComponent,
-    HiComponent,
+    MeowwWidgetComponent,
+    PurrWidgetComponent,
   ],
   entryComponents: [
-    HelloComponent,
-    HiComponent,
+    MeowwWidgetComponent,
+    PurrWidgetComponent,
   ],
 })
-export class GreetingModule {
+export class CatsModule {
   constructor(
   ) {
-    console.log('> GreetingModule loaded');
+    console.log('> CatsModule loaded');
   }
 }

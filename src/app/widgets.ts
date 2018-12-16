@@ -1,8 +1,8 @@
 import { ILazyLoadingWidgets } from './widgets-loader/interface';
-import { GREETING_WIDGETS } from './+greeting/widget';
-import { FAREWELL_WIDGETS } from './+farewell/widget';
+import { CATS_WIDGETS } from './+cats/widgets';
+import { DOGS_WIDGETS } from './+dogs/widgets';
 
 export const WIDGETS: ILazyLoadingWidgets[] = [
-  GREETING_WIDGETS,
-  FAREWELL_WIDGETS,
+  CATS_WIDGETS,
+  DOGS_WIDGETS,
 ];

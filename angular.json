@@ -31,8 +31,8 @@
               }
             ],
             "lazyModules": [
-              "src/app/+greeting/module",
-              "src/app/+farewell/module"
+              "src/app/+cats/module",
+              "src/app/+dogs/module"
             ]
           },
           "configurations": {

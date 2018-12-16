@@ -4,25 +4,25 @@ import { map } from 'rxjs/operators';
 import _ from 'lodash';
 
 @Component({
-  selector: 'bye-widget',
+  selector: 'woof-widget',
   template: `
     <div>
-      Bye
+      Woof
       {{ counter$ | async }}
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ByeComponent implements OnInit, OnDestroy {
+export class WoofWidgetComponent implements OnInit, OnDestroy {
   public counter$ = timer(0, 1000).pipe(
     map(() => _.random(0, 100)),
   );
 
   public ngOnInit() {
-    console.log('> ByeComponent: ngOnInit');
+    console.log('> WoofWidgetComponent: ngOnInit');
   }
 
   public ngOnDestroy() {
-    console.log('> ByeComponent: ngOnDestroy');
+    console.log('> WoofWidgetComponent: ngOnDestroy');
   }
 }

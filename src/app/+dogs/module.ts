@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { WIDGETS_COMPONENTS_TOKEN } from '../widgets-loader/const';
 import { ILazyLoadingWidgetComponent } from '../widgets-loader/interface';
-import { BYE_WIDGET_SELECTOR } from './const';
-import { ByeComponent } from './component/bye/bye';
+import { WOOF_WIDGET_SELECTOR } from './const';
+import { WoofWidgetComponent } from './component/woof/woof';
 
 const WIDGETS_COMPONENTS: ILazyLoadingWidgetComponent[] = [
-  { selector: BYE_WIDGET_SELECTOR, component: ByeComponent, }
+  { selector: WOOF_WIDGET_SELECTOR, component: WoofWidgetComponent }
 ];
 
 @NgModule({
@@ -17,15 +17,15 @@ const WIDGETS_COMPONENTS: ILazyLoadingWidgetComponent[] = [
     { provide: WIDGETS_COMPONENTS_TOKEN, useValue: WIDGETS_COMPONENTS },
   ],
   declarations: [
-    ByeComponent,
+    WoofWidgetComponent,
   ],
   entryComponents: [
-    ByeComponent,
+    WoofWidgetComponent,
   ],
 })
-export class FarewellModule {
+export class DogsModule {
   constructor(
   ) {
-    console.log('> FarewellModule loaded');
+    console.log('> DogsModule loaded');
   }
 }

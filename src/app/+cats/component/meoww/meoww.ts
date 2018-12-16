@@ -2,23 +2,23 @@ import { Component, ChangeDetectionStrategy, OnDestroy, OnInit } from '@angular/
 import { timer } from 'rxjs';
 
 @Component({
-  selector: 'hi-widget',
+  selector: 'meoww-widget',
   template: `
     <div>
-      Hi
+      Meoww
       {{ counter$ | async }}
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HiComponent implements OnInit, OnDestroy {
+export class MeowwWidgetComponent implements OnInit, OnDestroy {
   public counter$ = timer(0, 1000);
 
   public ngOnInit() {
-    console.log('> HiComponent: ngOnInit');
+    console.log('> MeowwWidgetComponent: ngOnInit');
   }
 
   public ngOnDestroy() {
-    console.log('> HiComponent: ngOnDestroy');
+    console.log('> MeowwWidgetComponent: ngOnDestroy');
   }
 }

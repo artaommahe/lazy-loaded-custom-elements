@@ -2,23 +2,23 @@ import { Component, ChangeDetectionStrategy, OnDestroy, OnInit } from '@angular/
 import { timer } from 'rxjs';
 
 @Component({
-  selector: 'hello-widget',
+  selector: 'purr-widget',
   template: `
     <div>
-      Hello
+      Purr
       {{ counter$ | async }}
     </div>
   `,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class HelloComponent implements OnInit, OnDestroy {
+export class PurrWidgetComponent implements OnInit, OnDestroy {
   public counter$ = timer(0, 1000);
 
   public ngOnInit() {
-    console.log('> HelloComponent: ngOnInit');
+    console.log('> PurrWidgetComponent: ngOnInit');
   }
 
   public ngOnDestroy() {
-    console.log('> HelloComponent: ngOnDestroy');
+    console.log('> PurrWidgetComponent: ngOnDestroy');
   }
 }
