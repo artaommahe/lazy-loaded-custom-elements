@@ -38,16 +38,16 @@ export class CustomElementsLoaderModule {
     );
   }
 
-  private registerCustomElement(selector: string, moduleRef: NgModuleRef<any>): void {
+  private registerCustomElement(elementSelector: string, moduleRef: NgModuleRef<any>): void {
     const injector = moduleRef.injector;
 
-    const customElementsComponents = injector.get(CUSTOM_ELEMENTS_COMPONENTS_TOKEN);
+    const components = injector.get(CUSTOM_ELEMENTS_COMPONENTS_TOKEN);
 
-    if (!customElementsComponents) {
+    if (!components) {
       return;
     }
 
-    const component = customElementsComponents.find(({ selector }) => selector === selector);
+    const component = components.find(({ selector }) => selector === elementSelector);
 
     if (!component) {
       return;
@@ -56,6 +56,6 @@ export class CustomElementsLoaderModule {
     const strategyFactory = new ElementZoneStrategyFactory(component.component, injector);
     const element = createCustomElement(component.component, { injector, strategyFactory });
 
-    customElements.define(selector, element);
+    customElements.define(elementSelector, element);
   }
 }
